@@ -15,7 +15,7 @@ def get_chapter_info(video_path):
         "json",
         "-show_chapters",
         "-show_entries",
-        "chapter=title,start_time,end_time",
+        "chapter=start_time,end_time",
         video_path,
     ]
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -62,6 +62,6 @@ def split_video(video_path, output_dir):
         subprocess.run(command)
 
 # Test the functions
-video_path = "./video.mp4"
+video_path = "./video.mkv"
 output_dir = "./output"
 split_video(video_path, output_dir)
